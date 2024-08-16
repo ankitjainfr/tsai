@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "Bot/bot_node.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/webhook", "dest": "/Bot/bot_node.js" }
+  ]
+}
