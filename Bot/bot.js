@@ -26,7 +26,7 @@ More buddies, more coins, more help!`,
             parse_mode: 'Markdown',
             reply_markup: {
                 inline_keyboard: [
-                  [{ text: "👋 Start Playing!", web_app: { url: urlSent } }],
+                  [{ text: "👋 Yeah, Start Playing!", web_app: { url: urlSent } }],
                   [{ text: "Join our Community", url: community_link }]
                 ]
             },
