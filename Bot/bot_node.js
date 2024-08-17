@@ -1,5 +1,5 @@
 const { Telegraf } = require("telegraf");
-const TOKEN = "7091294846:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI";
+const TOKEN = "7435621483:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI";
 const bot = new Telegraf(TOKEN);
 
 const web_link = "https://turboswap2.vercel.app";
