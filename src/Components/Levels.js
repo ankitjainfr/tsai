@@ -4,17 +4,17 @@ import { useUser } from '../context/userContext';
 
 
 const userLevels = [
-    { name: 'Liboo Novice', icon: '/warm.webp', tapBalanceRequired: 500000 },
-    { name: 'Liboo Apprentice', icon: '/light.webp', tapBalanceRequired: 1000000 },
-    { name: 'Liboo Adept', icon: '/blaze.webp', tapBalanceRequired: 2000000 },
-    { name: 'Liboo Journeyman', icon: '/flame.webp', tapBalanceRequired: 4000000 },
-    { name: 'Liboo Veteran', icon: '/hot.webp', tapBalanceRequired: 8000000 },
-    { name: 'Liboo Expert', icon: '/expert.webp', tapBalanceRequired: 25000000 },
-    { name: 'Liboo Virtuoso', icon: '/burning.webp', tapBalanceRequired: 50000000 },
-    { name: 'Liboo Champion', icon: '/burning.webp', tapBalanceRequired: 100000000 },
-    { name: 'Liboo Legend', icon: '/burning.webp', tapBalanceRequired: 1000000000 },
-    { name: 'Libo Maestro', icon: '/burning.webp', tapBalanceRequired: 10000000000 },
-    { name: 'Liboo Destroyer', icon: '/burning.webp', tapBalanceRequired: 20000000000 },
+    { name: 'Turbo Man', icon: '/warm.webp', tapBalanceRequired: 500000 },
+    { name: 'Turbo Apprentice', icon: '/light.webp', tapBalanceRequired: 1000000 },
+    { name: 'Turbo Adept', icon: '/blaze.webp', tapBalanceRequired: 2000000 },
+    { name: 'Turbo Journeyman', icon: '/flame.webp', tapBalanceRequired: 4000000 },
+    { name: 'Turbo Veteran', icon: '/hot.webp', tapBalanceRequired: 8000000 },
+    { name: 'Turbo Expert', icon: '/expert.webp', tapBalanceRequired: 25000000 },
+    { name: 'Turbo Virtuoso', icon: '/burning.webp', tapBalanceRequired: 50000000 },
+    { name: 'Turbo Champion', icon: '/burning.webp', tapBalanceRequired: 100000000 },
+    { name: 'Turbo Legend', icon: '/burning.webp', tapBalanceRequired: 1000000000 },
+    { name: 'Turbo Maestro', icon: '/burning.webp', tapBalanceRequired: 10000000000 },
+    { name: 'Turbo Destroyer', icon: '/burning.webp', tapBalanceRequired: 20000000000 },
   ];
   
   

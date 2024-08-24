@@ -127,7 +127,7 @@ const Ref = () => {
   }, [referrals]);
 
   const copyToClipboard = useCallback(() => {
-    const reflink = `https://t.me/Liboo_tonbot?start=r${id}`;
+    const reflink = `https://t.me/turboswapbot?start=r${id}`;
     navigator.clipboard.writeText(reflink)
       .then(() => {
         setCopied(true);
@@ -188,7 +188,7 @@ const Ref = () => {
               <h2 className="text-xl font-semibold text-[#262626] mb-4">My Invite Link</h2>
               <InviteLinkWrapper>
                 <InviteLink>
-                  https://t.me/liboo_tonbot?start=r{id}
+                https://t.me/turboswapbot?start=r{id}
                 </InviteLink>
                 <CopyButton onClick={copyToClipboard}>
                   {copied ? "Copied!" : "Copy"}

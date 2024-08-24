@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 
 const EnergyBar = ({ energy, battery, energyPercentage, flash, leaderboard }) => {
   return (
-    <div className="w-full fixed bottom-[100px] left-0 right-0 px-5">
-      <div className="flex w-full items-end justify-between bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-2xl p-3">
+    <div className="w-full fixed bottom-[100px] left-0 right-0 px-1">
+      <div className="flex w-full items-end justify-between bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-2xl p-0">
         <div className="flex flex-col w-[68%]">
           <div className="flex pb-3 space-x-2 items-center text-[#fff]">
             <img alt="flash" src={flash} className="w-[22px]" />
@@ -22,14 +22,14 @@ const EnergyBar = ({ energy, battery, energyPercentage, flash, leaderboard }) =>
           </div>
         </div>
         <div className="w-[30%] flex flex-col space-y-2">
-          <NavLink 
-            to="/stake" 
-            className="w-full flex items-center justify-center bg-white bg-opacity-30 rounded-xl p-2 transition-all duration-300 hover:bg-opacity-50"
-          >
-            <img src="stake-icon.png" alt="Staking" className="w-5 h-5 mr-1" />
-            <span className="text-[11px] text-white font-semibold whitespace-nowrap">Staking</span>
-          </NavLink>
-          <NavLink 
+          //<NavLink 
+          //  to="/stake" 
+          //  className="w-full flex items-center justify-center bg-white bg-opacity-30 rounded-xl p-2 transition-all duration-300 hover:bg-opacity-50"
+          //</div>>
+          //</div>  <img src="stake-icon.png" alt="Staking" className="w-5 h-5 mr-1" />
+          //</div>  <span className="text-[11px] text-white font-semibold whitespace-nowrap">Staking</span>
+          //</NavLink>
+          //<NavLink 
             to="/tapsleaderboard" 
             className="w-full flex items-center justify-center bg-white bg-opacity-30 rounded-xl p-2 transition-all duration-300 hover:bg-opacity-50"
           >

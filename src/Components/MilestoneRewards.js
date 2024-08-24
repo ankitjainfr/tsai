@@ -8,17 +8,17 @@ import congratspic from "../images/celebrate.gif";
 import coinsmall from "../images/main-logo.png";
 
 const milestones = [
-  { name: 'Liboo Novice', icon: '/warm.webp', tapBalanceRequired: 500000, reward: 50000 },
-  { name: 'Liboo Apprentice', icon: '/light.webp', tapBalanceRequired: 1000000, reward: 100000 },
-  { name: 'Liboo Adept', icon: '/blaze.webp', tapBalanceRequired: 2000000, reward: 250000 },
-  { name: 'Liboo Journeyman', icon: '/flame.webp', tapBalanceRequired: 4000000, reward: 500000 },
-  { name: 'Liboo Veteran', icon: '/hot.webp', tapBalanceRequired: 8000000, reward: 1000000 },
-  { name: 'Liboo Expert', icon: '/burning.webp', tapBalanceRequired: 25000000, reward: 1500000 },
-  { name: 'Liboo Virtuoso', icon: '/burning.webp', tapBalanceRequired: 50000000, reward: 2500000 },
-  { name: 'Liboo Champion', icon: '/burning.webp', tapBalanceRequired: 100000000, reward: 5000000 },
-  { name: 'Liboo Legend', icon: '/burning.webp', tapBalanceRequired: 250000000, reward: 10000000 },
-  { name: 'Liboo Maestro', icon: '/burning.webp', tapBalanceRequired: 500000000, reward: 25000000 },
-  { name: 'Liboo Destroyer', icon: '/burning.webp', tapBalanceRequired: 1000000000, reward: 50000000 },
+  { name: 'Turbo Man', icon: '/warm.webp', tapBalanceRequired: 500000, reward: 50000 },
+  { name: 'Turbo Apprentice', icon: '/light.webp', tapBalanceRequired: 1000000, reward: 100000 },
+  { name: 'Turbo Adept', icon: '/blaze.webp', tapBalanceRequired: 2000000, reward: 250000 },
+  { name: 'Turbo Journeyman', icon: '/flame.webp', tapBalanceRequired: 4000000, reward: 500000 },
+  { name: 'Turbo Veteran', icon: '/hot.webp', tapBalanceRequired: 8000000, reward: 1000000 },
+  { name: 'Turbo Expert', icon: '/burning.webp', tapBalanceRequired: 25000000, reward: 1500000 },
+  { name: 'Turbo Virtuoso', icon: '/burning.webp', tapBalanceRequired: 50000000, reward: 2500000 },
+  { name: 'Turbo Champion', icon: '/burning.webp', tapBalanceRequired: 100000000, reward: 5000000 },
+  { name: 'Turbo Legend', icon: '/burning.webp', tapBalanceRequired: 250000000, reward: 10000000 },
+  { name: 'Turbo Maestro', icon: '/burning.webp', tapBalanceRequired: 500000000, reward: 25000000 },
+  { name: 'Turbo Destroyer', icon: '/burning.webp', tapBalanceRequired: 1000000000, reward: 50000000 },
 ];
 
 const MilestoneContainer = styled.div`

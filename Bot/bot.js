@@ -8,7 +8,7 @@ const bot = new Telegraf(TOKEN);
 app.use(express.json());
 
 const web_link = "https://turboswap2.vercel.app";
-const community_link = "https://t.me/Turbo Swap_ton";
+const community_link = "https://t.me/TurboSwap_ton";
 
 bot.start((ctx) => {
     const startPayload = ctx.startPayload;

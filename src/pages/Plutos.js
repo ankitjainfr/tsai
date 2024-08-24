@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase"; // Adjust the path as needed
 import styled, { keyframes } from "styled-components";
@@ -54,6 +54,7 @@ const Plutos = () => {
   const [clicks, setClicks] = useState([]);
   const {
     name,
+    smallname,
     balance,
     tapBalance,
     energy,
@@ -83,7 +84,6 @@ const Plutos = () => {
   // eslint-disable-next-line
   const [glowBooster, setGlowBooster] = useState(false);
   const [showLevels, setShowLevels] = useState(false);
-  const debounceTimerRef = useRef(null);
   // eslint-disable-next-line
   const refillTimerRef = useRef(null);
   const isUpdatingRef = useRef(false);
@@ -92,19 +92,18 @@ const Plutos = () => {
   const accumulatedTapBalanceRef = useRef(tapBalance);
   const refillTimeoutRef = useRef(null); // Add this line
 
+
   function triggerHapticFeedback() {
     const isAndroid = /Android/i.test(navigator.userAgent);
     const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    if (
-      isIOS &&
-      window.Telegram &&
-      window.Telegram.WebApp &&
-      window.Telegram.WebApp.HapticFeedback
-    ) {
-      window.Telegram.WebApp.HapticFeedback.impactOccurred("medium");
+    if (isIOS && window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.HapticFeedback) {
+      window.Telegram.WebApp.HapticFeedback.impactOccurred('medium');
+    } else if (isAndroid && 'vibrate' in navigator) {
+      // Use the vibration API on Android
+      navigator.vibrate(50); // Vibrate for 50ms
     } else {
-      console.warn("Haptic feedback not supported on this device.");
+      console.warn('Haptic feedback not supported on this device.');
     }
   }
 
@@ -152,7 +151,7 @@ const Plutos = () => {
     // Remove the animation class after animation ends to allow re-animation on the same side
     setTimeout(() => {
       imageRef.current.classList.remove(animationClass);
-    }, 500); // duration should match the animation duration in CSS
+    }, 6500); // duration should match the animation duration in CSS
 
     // Increment the count
     const rect = e.target.getBoundingClientRect();
@@ -191,10 +190,6 @@ const Plutos = () => {
         prevClicks.filter((click) => click.id !== newClick.id),
       );
     }, 1000); // Match this duration with the animation duration
-
-    // Reset the debounce timer
-    clearTimeout(debounceTimerRef.current);
-    debounceTimerRef.current = setTimeout(updateFirestore, 1000); // Adjust the delay as needed
 
     // Reset the refill timer
     clearInterval(refillIntervalRef.current); // Stop refilling while the user is active
@@ -249,7 +244,7 @@ const Plutos = () => {
     // Remove the animation class after animation ends to allow re-animation on the same side
     setTimeout(() => {
       imageRef.current.classList.remove(animationClass);
-    }, 500); // duration should match the animation duration in CSS
+    }, 6500); // duration should match the animation duration in CSS
 
     // Increment the count
     const rect = e.target.getBoundingClientRect();
@@ -288,10 +283,6 @@ const Plutos = () => {
         prevClicks.filter((click) => click.id !== newClick.id),
       );
     }, 1000); // Match this duration with the animation duration
-
-    // Reset the debounce timer
-    clearTimeout(debounceTimerRef.current);
-    debounceTimerRef.current = setTimeout(updateFirestore, 1000); // Adjust the delay as needed
 
     // Reset the refill timer
     clearInterval(refillIntervalRef.current); // Stop refilling while the user is active
@@ -365,15 +356,14 @@ const Plutos = () => {
   // };
 
   const formatNumber = (num) => {
-    if (num < 1000000) {
+    if (num < 100000) {
       return new Intl.NumberFormat().format(num).replace(/,/g, " ");
+    } else if (num < 1000000) {
+      return new Intl.NumberFormat().format(num).replace(/,/g, " ");
+    // } else {
+    //   return (num / 1000000).toFixed(3).replace(".", ".") + " M";
     } else {
-      const millions = num / 1000000;
-      if (millions % 1 === 0) {
-        return millions + "M";
-      } else {
-        return millions.toFixed(2).replace(/\.?0+$/, "") + "M";
-      }
+      return new Intl.NumberFormat().format(num).replace(/,/g, " ");
     }
   };
 
@@ -383,20 +373,31 @@ const Plutos = () => {
         <Spinner />
       ) : (
         <Animate>
-          <div className="w-full flex justify-center flex-col items-center overflow-hidden">
-            <div className="flex space-x-[2px] justify-center items-center mt-8">
+          <div className="w-full flex justify-center flex-col overflow-hidden">
+          <div className="flex flex-row justify-center items-center mb-1">
+          <div className="bg-blue-500 text-[#fff] text-[12px] font-extrabold text-center p-2 mr-2 rounded-[10px]">
+  Welcome<br />{smallname}
+</div>
+<div className="bg-blue-500 text-[#fff] text-[12px] font-extrabold text-center p-2 mr-2 rounded-[10px]">
+  Earn per tap:<br /> +{tapValue.value}
+</div>
+<div className="bg-blue-500 text-[#fff] text-[12px] font-extrabold text-center p-2 rounded-[10px]">
+  Booster per tap:<br /> +{tapValue.value * 5}
+</div>
+</div>
+            <div className="flex space-x-[18px] justify-center items-center mt-0">
               <div className="w-[50px] h-[50px]">
                 <img src={coinsmall} className="w-full" alt="coin" />
               </div>               
               <h1 className="text-[#507cff] text-[45px] font-extrabold font-family-[poppins]">
-                {formatNumber(balance)}
+                {formatNumber(balance+ refBonus)}
               </h1>
             </div>
             
-            <div className="w-full ml-[6px] flex space-x-1 items-center justify-center mt-2">
+            <div className="w-full ml-[0px] flex space-x-1 items-center justify-center mt-0">
               <img
                 src={level.imgUrl}
-                className="w-[25px] relative"
+                className="w-[35px] relative"
                 alt="bronze"
               />
               <h2
@@ -408,13 +409,13 @@ const Plutos = () => {
               <MdOutlineKeyboardArrowRight className="w-[20px] h-[20px] text-[#171717] mt-[2px]" />
             </div>
             
-            <div className="w-full flex justify-center items-center relative mt-8">
+            <div className="w-full flex justify-center items-center relative mt-2">
               <div className="bg-[#0077cc] blur-[50px] absolute w-[200px] h-[220px] rounded-full mb-[70px]"></div>
               <div className={`${tapGuru ? "block" : "hidden"} pyro`}>
                 <div className="before"></div>
                 <div className="after"></div>
               </div>
-              <div className="w-[280px] h-[280px] relative flex items-center justify-center">
+              <div className="w-[300px] h-[310px] relative flex items-center justify-center">
                 <img
                   src="/lihgt.gif"
                   alt="err"
@@ -428,7 +429,7 @@ const Plutos = () => {
                         ref={imageRef}
                         src={level.imgTap}
                         alt="Wobble"
-                        className="wobble-image !w-[260px] select-none"
+                        className="wobble-image !w-[360px] select-none"
                       />
                       {clicks.map((click) => (
                         <SlideUpText key={click.id} x={click.x} y={click.y}>
@@ -444,7 +445,7 @@ const Plutos = () => {
                         ref={imageRef}
                         src={level.imgBoost}
                         alt="Wobble"
-                        className="wobble-image !w-[260px] select-none"
+                        className="wobble-image !w-[360px] select-none"
                       />
                       {clicks.map((click) => (
                         <SlideUpText key={click.id} x={click.x} y={click.y}>
@@ -457,6 +458,18 @@ const Plutos = () => {
               </div>
             </div>
   
+            <div className="flex flex-col space-y-6 fixed bottom-[120px] left-0 right-0 justify-center items-center px-5">
+              <div className="flex flex-col w-full items-center justify-center">
+                <div className="flex pb-[6px] space-x-1 items-center justify-center text-[#fff]">
+                </div>
+                <div className="flex w-full p-[4px] h-[20px] items-center bg-energybar rounded-[12px] border-[1px] border-borders2">
+                  <div
+                    className="bg-[#9d0000] h-full rounded-full transition-width duration-100"
+                    style={{ width: `${energyPercentage}%` }}
+                  ></div>
+                </div>
+              </div>
+            </div>
             <EnergyBar 
               energy={energy}
               battery={battery}
@@ -464,7 +477,6 @@ const Plutos = () => {
               flash={flash}
               leaderboard={leaderboard}
             />
-  
             <Levels showLevels={showLevels} setShowLevels={setShowLevels} />
           </div>
         </Animate>
