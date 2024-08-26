@@ -51,7 +51,7 @@ const Title = styled.h1`
 const TabContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: #f0f4ff;
+  background-color: #080808;
   border-radius: 1rem;
   padding: 0.25rem;
   margin-bottom: 1rem;

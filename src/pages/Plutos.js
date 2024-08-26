@@ -70,6 +70,7 @@ const Plutos = () => {
     setBalance,
     refBonus,
     level,
+    newEnergy,
     loading,
   } = useUser();
 
@@ -151,7 +152,7 @@ const Plutos = () => {
     // Remove the animation class after animation ends to allow re-animation on the same side
     setTimeout(() => {
       imageRef.current.classList.remove(animationClass);
-    }, 6500); // duration should match the animation duration in CSS
+    }, 500); // duration should match the animation duration in CSS
 
     // Increment the count
     const rect = e.target.getBoundingClientRect();
@@ -165,7 +166,7 @@ const Plutos = () => {
 
     // Update state immediately for UI
     setEnergy((prevEnergy) => {
-      const newEnergy = Math.max(prevEnergy - tapValue.value, 0); // Ensure energy does not drop below zero
+     // const newEnergy = Math.max(prevEnergy - tapValue.value, 0); // Ensure energy does not drop below zero
       accumulatedEnergyRef.current = newEnergy;
       return newEnergy;
     });
@@ -244,7 +245,7 @@ const Plutos = () => {
     // Remove the animation class after animation ends to allow re-animation on the same side
     setTimeout(() => {
       imageRef.current.classList.remove(animationClass);
-    }, 6500); // duration should match the animation duration in CSS
+    }, 500); // duration should match the animation duration in CSS
 
     // Increment the count
     const rect = e.target.getBoundingClientRect();
@@ -258,7 +259,7 @@ const Plutos = () => {
 
     // Update state immediately for UI
     setEnergy((prevEnergy) => {
-      const newEnergy = Math.max(prevEnergy - 0, 0); // Ensure energy does not drop below zero
+     // const newEnergy = Math.max(prevEnergy - 0, 0); // Ensure energy does not drop below zero
       accumulatedEnergyRef.current = newEnergy;
       return newEnergy;
     });
@@ -389,7 +390,7 @@ const Plutos = () => {
               <div className="w-[50px] h-[50px]">
                 <img src={coinsmall} className="w-full" alt="coin" />
               </div>               
-              <h1 className="text-[#507cff] text-[45px] font-extrabold font-family-[poppins]">
+              <h1 className="text-[#fff] text-[45px] font-extrabold font-family-[poppins]">
                 {formatNumber(balance+ refBonus)}
               </h1>
             </div>
@@ -461,6 +462,11 @@ const Plutos = () => {
             <div className="flex flex-col space-y-6 fixed bottom-[120px] left-0 right-0 justify-center items-center px-5">
               <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex pb-[6px] space-x-1 items-center justify-center text-[#fff]">
+                  <img alt="flash" src={flash} className="w-[20px]" />
+                  <div>
+                    <span className="text-[18px] font-bold">{energy}</span>
+                    <span className="text-[14px] font-medium">/ {battery.energy}</span>
+                  </div>
                 </div>
                 <div className="flex w-full p-[4px] h-[20px] items-center bg-energybar rounded-[12px] border-[1px] border-borders2">
                   <div
