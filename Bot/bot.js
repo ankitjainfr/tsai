@@ -1,17 +1,14 @@
 const { Telegraf, Markup } = require("telegraf");
 const express = require("express");
 const app = express();
-
 const TOKEN = "7435621483:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI";  // Asegúrate de reemplazar "YOUR_BOT_TOKEN" con tu token real
 const bot = new Telegraf(TOKEN);
-
 app.use(express.json());
-
 const web_link = "https://turboswap2.vercel.app";
 const community_link = "https://t.me/TurboSwapAI_ton";
 
 bot.start((ctx) => {
-    const startPayload = ctx.startPayload;
+    const startPayload = ctx.update.message.payload;
     const urlSent = `${web_link}?ref=${startPayload}`;
     const user = ctx.message.from;
     const userName = user.username ? `@${user.username}` : user.first_name;
