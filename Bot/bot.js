@@ -8,7 +8,7 @@ const bot = new Telegraf(TOKEN);
 app.use(express.json());
 
 const web_link = "https://turboswap2.vercel.app";
-const community_link = "https://t.me/TurboSwap_ton";
+const community_link = "https://t.me/TurboSwapAI_ton";
 
 bot.start((ctx) => {
     const startPayload = ctx.startPayload;
@@ -19,10 +19,11 @@ bot.start((ctx) => {
     ctx.replyWithPhoto(
         { url: 'https://libooproject.website/wp-content/uploads/2024/07/pikaso_texttoimage_adorable-cartoon-style-Whimsical-cartoonstyle-Whit-1.jpeg' }, // Reemplaza 'URL_DE_LA_IMAGEN' con la URL de tu imagen
         {
-            caption: `*Hey! Welcome to TurboSwap, tap, help and get $LIBOO Tokens.*
-Got friends?
-Bring them all into the game.
-More buddies, more coins, more help!`,
+            caption: `*Hey! Welcome to TurboSwap AI, tap, help and get $TurboSwap AI Tokens.*
+Got friends?, Bring them all into the game.
+⚡️ Token listing:
+Confirmed listings on Tier-1 CEXs.
+Backed by [redacted] (reveal coming soon) 🤫`,
             parse_mode: 'Markdown',
             reply_markup: {
                 inline_keyboard: [

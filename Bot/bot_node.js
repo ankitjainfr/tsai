@@ -3,8 +3,8 @@ const TOKEN = "7435621483:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI";
 const bot = new Telegraf(TOKEN);
 
 const web_link = "https://turboswap2.vercel.app";
-const community_link = "https://t.me/Turbo Swap_ton"; 
-const how_to_earn = `How to play Turbo Swap 🤑
+const community_link = "https://t.me/TurboSwapAI_ton"; 
+const how_to_earn = `How to play TurboSwap AI 🤑
 
 💰 Tap to earn
 Tap the screen and collect coins.
@@ -28,17 +28,19 @@ bot.start((ctx) => {
   const urlSent = `${web_link}?ref=${startPayload}`;
   const user = ctx.message.from;
   const userName = user.username ? `@${user.username}` : user.first_name;
-  ctx.replyWithMarkdown(`*Hey, ${userName}! Welcome to Turbo Swap Spirit!*
-Tap on the Turbo Swap and see your balance rise.
+  ctx.replyWithMarkdown(`*Hey, ${userName}! Welcome to TurboSwap AI!*
+Tap on the Turbo button (green frog) and see your balance rise.
 
-*Turbo Swap* is a Special Telegram App on the TON Blockchain. The biggest part of Turbo Swap Token distribution will occur among the players here.
+*TurboSwap AI* is a Special Telegram App on the TON Blockchain. The biggest part of TurboSwap AI Token distribution will occur among the players here.
 
-Got friends, relatives, co-workers?
-Bring them all into the game.
-More friends, more coins.`, {
+Got friends, Bring them all into the game.
+
+⚡️ Token listing:
+Confirmed listings on Tier-1 CEXs.
+Backed by [redacted] (reveal coming soon) 🤫`, {
       reply_markup: {
           inline_keyboard: [
-            [{ text: "👋 Play Turbo Swap!", web_app: { url: urlSent } }],
+            [{ text: "👋 Play TurboSwap AI!", web_app: { url: urlSent } }],
             [{ text: "Join Community", url: community_link }],
             [{ text: "How to earn?", callback_data: "how_to_earn" }]
           ],
