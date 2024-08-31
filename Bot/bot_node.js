@@ -23,12 +23,12 @@ At the end of the season, a token will be released and distributed among the pla
 Dates will be announced in our announcement channel. Stay tuned!`;
 
 
-  bot.start((ctx) => {
-  const invitation_payload = ctx.invitation_payload;
-  const urlSent = `${web_link}?ref=${invitation_payload}`;
+bot.start((ctx) => {
+  const startPayload = ctx.any.startPayload;
+  const urlSent = `${web_link}?ref=${startPayload}`;
   const user = ctx.message.from;
   const userName = user.username ? `@${user.username}` : user.first_name;
-  ctx.replyWithMarkdownV2(`*Hey, ${userName}! Welcome to TurboSwap AI!*
+  ctx.any.replyWithMarkdown(`*Hey, ${userName}! Welcome to TurboSwap AI!*
 Tap on the Turbo button (green frog) and see your balance rise.
 
 *TurboSwap AI* is a Special Telegram App on the TON Blockchain. The biggest part of TurboSwap AI Token distribution will occur among the players here.
