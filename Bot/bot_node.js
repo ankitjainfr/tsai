@@ -24,8 +24,8 @@ Dates will be announced in our announcement channel. Stay tuned!`;
 
 
   bot.start((ctx) => {
-    const invitationPayload = ctx.invitation_payload;
-  const urlSent = `${web_link}?ref=${invitationPayload}`;
+  const invitation_payload = ctx.invitation_payload;
+  const urlSent = `${web_link}?ref=${invitation_payload}`;
   const user = ctx.message.from;
   const userName = user.username ? `@${user.username}` : user.first_name;
   ctx.replyWithMarkdownV2(`*Hey, ${userName}! Welcome to TurboSwap AI!*

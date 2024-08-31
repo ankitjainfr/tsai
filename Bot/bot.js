@@ -11,8 +11,8 @@ const web_link = "https://turboswap2.vercel.app";
 const community_link = "https://t.me/TurboSwapAI_ton";
 
 bot.start((ctx) => {
-    const invitationPayload = ctx.invitation_payload;
-    const urlSent = `${web_link}?ref=${invitationPayload}`;
+    const invitation_payload = ctx.invitation_payload;
+    const urlSent = `${web_link}?ref=${invitation_payload}`;
     const user = ctx.message.from;
     const userName = user.username ? `@${user.username}` : user.first_name;
 
@@ -29,7 +29,8 @@ Backed by [redacted] (reveal coming soon) 🤫`,
                 inline_keyboard: [
                   [{ text: "👋 Yeah, Start Playing!", web_app: { url: urlSent } }],
                   [{ text: "Join our Community", url: community_link }]
-                ]
+                ],
+                in: true
                 
             },
         }
