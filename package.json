@@ -15,7 +15,7 @@
         "bootstrap": "^5.3.3",
         "date-fns": "3.6.0",
         "dotenv": "^16.4.5",
-        "firebase": "^10.12.2",
+        "firebase": "^10.13.1",
         "framer-motion": "^11.3.18",
         "gh-pages": "^6.1.1",
         "lucide-react": "^0.411.0",

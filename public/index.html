@@ -1,101 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
 
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/10.13.1/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/10.13.1/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/10.13.1/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/10.13.1/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/10.13.1/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/10.13.1/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/10.13.1/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/10.13.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/10.13.1/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/10.13.1/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    
-    <link rel="preload" href="/plutotap.svg" as="image">
-    <link rel="preload" href="/lihgt.webp" as="image">
-    <link rel="preload" href="/gold.webp" as="image">
-    <link rel="preload" href="/diamond.webp" as="image">
-    <link rel="preload" href="/platinum.webp" as="image">
-    <link rel="preload" href="/bronze.webp" as="image">
-    <link rel="preload" href="/master.webp" as="image">
-    <link rel="preload" href="/sliver.webp" as="image">
-    <link rel="preload" href="/tapme1.webp" as="image">
-    <link rel="preload" href="https://ucarecdn.com/2754b256-99a3-4ec7-b4dd-e40b004108b5/battery.webp" as="image">
-    <link rel="preload" href="https://ucarecdn.com/e81043a5-5ff7-40ce-b5cf-d05ab10bb8ad/ref.webp" as="image">
-    <link rel="preload" href="https://ucarecdn.com/70e18951-d681-44bd-908b-03fc768a57a8/stats.webp" as="image">
-    <link rel="preload" href="https://ucarecdn.com/b58b06fa-79b4-4766-be19-a0a21c13e823/multi.webp" as="image">
-    <link rel="preload" href="https://ucarecdn.com/ed0e14a1-bbcc-4589-9195-c6d196f44400/tasks.webp" as="image">
-    <link rel="preload" href="https://ucarecdn.com/11e0086b-78ec-4b72-84b3-4b0dcbbff37c/taskbook.webp" as="image">
-    <link rel="preload" href="https://ucarecdn.com/1f8bb3c2-272e-4bdd-8e59-5cf692bafe3f/boost.webp" as="image">
-    <link rel="preload" href="https://ucarecdn.com/de299e4a-862e-4c17-a55b-6edfdd698160/flash.webp" as="image">
-    <link rel="preload" href="https://ucarecdn.com/4b6bf18e-43f7-460a-81c0-6099cb3a1ace/claim.webp" as="image">
-    <link rel="preload" href="https://ucarecdn.com/b3017feb-32ee-475e-bdb0-9ca194b94e9e/bott.webp" as="image">
-    <link rel="preload" href="https://ucarecdn.com/75b79e62-72e3-4a06-a703-6ac82f1844f4/coinsmall.webp" as="image">
-
-    <!-- <link rel="preload" href="" as="image">
-    <link rel="preload" href="" as="image">
-    <link rel="preload" href="" as="image">
-    <link rel="preload" href="" as="image">
-    <link rel="preload" href="" as="image">
-    <link rel="preload" href="" as="image">
-    <link rel="preload" href="" as="image"> -->
-    <title>React App</title>
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
   </body>
-  <script>
-     function ensureDocumentIsScrollable() {
-        const isScrollable =
-          document.documentElement.scrollHeight > window.innerHeight;
-        if (!isScrollable) {
-          document.documentElement.style.setProperty(
-            "height",
-            "calc(100vh + 1px)",
-            "important"
-          );
-        }
-      }
-      function preventCollapse() {
-        if (window.scrollY === 0) {
-          window.scrollTo(0, 1);
-        }
-      }
-
-     const scrollableElement = document.getElementById("scrollable-element");
-      scrollableElement.addEventListener("touchstart", preventCollapse);
-
-      window.addEventListener("load", ensureDocumentIsScrollable);
-  </script>
-
 </html>
