@@ -648,7 +648,7 @@ const Boost = () => {
         Multitap
       </h3>
       <p className="pb-6 text-[#262626] text-[16px] text-center">
-        Increase amount of TURBO SWAP you can earn per one tap <br/>
+        Increase amount of TURBO SWAP AI you can earn per one tap <br/>
         +1 per tap for each level
       </p>
       <div className="flex flex-1 items-center space-x-2">
