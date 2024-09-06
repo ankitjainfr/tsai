@@ -18,7 +18,7 @@ bot.start((ctx) => {
     const userName = user.username ? `@${user.username}` : user.first_name;
 
     ctx.replyWithPhoto(
-        { url: 'https://libooproject.website/wp-content/uploads/2024/07/pikaso_texttoimage_adorable-cartoon-style-Whimsical-cartoonstyle-Whit-1.jpeg' }, // Reemplaza 'URL_DE_LA_IMAGEN' con la URL de tu imagen
+        { url: 'https://x.com/TurboSwapAI' }, // Reemplaza 'URL_DE_LA_IMAGEN' con la URL de tu imagen
         {
             caption: `*Hey! Welcome to TurboSwap AI, tap, help and get $TURBO SWAP AI Tokens.*
 Got friends?, Bring them all into the game.
