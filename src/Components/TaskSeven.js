@@ -68,7 +68,7 @@ const TaskSeven = ({ showModal, setShowModal }) => {
 
 
   const handleTaskLinkClick = () => {
-    window.open("https://www.facebook.com/profile.php?id=61562777822910");
+    window.open("https://www.facebook.com/profile.php?id=61565223698131");
 
     setTimeout(() => {
       setShowTaskButton(false);
@@ -85,7 +85,7 @@ const TaskSeven = ({ showModal, setShowModal }) => {
     }
 
     const response = await fetch(
-     `https://api.telegram.org/bot7219246213:AAHJV1pqqvWo6AXL_sTPWOTm1j1RvIn2jrA/getChatMember?chat_id=@liboochannel_ton&user_id=${id}`
+     `https://api.telegram.org/bot7435621483:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI/getChatMember?chat_id=@TurboSwapAI_ton&user_id=${id}`
     );
     const data = await response.json();
 

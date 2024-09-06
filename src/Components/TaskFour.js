@@ -68,7 +68,7 @@ const TaskFour = ({ showModal, setShowModal }) => {
 
 
   const handleTaskLinkClick = () => {
-    window.open("https://www.vk.com");
+    window.open("https://x.com/AnkitJain_Ton");
 
     setTimeout(() => {
       setShowTaskButton(false);
@@ -85,7 +85,7 @@ const TaskFour = ({ showModal, setShowModal }) => {
     }
 
     const response = await fetch(
-      `https://api.telegram.org/bot7219246213:AAHJV1pqqvWo6AXL_sTPWOTm1j1RvIn2jrA/getChatMember?chat_id=@liboochannel_ton&user_id=${id}`
+      `https://api.telegram.org/bot7435621483:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI/getChatMember?chat_id=@TurboSwapAI_ton&user_id=${id}`
     );
     const data = await response.json();
 
@@ -103,7 +103,7 @@ const TaskFour = ({ showModal, setShowModal }) => {
     } else {
       setTimeout(() => {
         setMessage(
-          "Please follow on VK first before you can claim this task bonus."
+          "Please follow our Founder first before you can claim this task bonus."
         );
       }, 1000);
       setCounter(15);
@@ -221,10 +221,9 @@ const TaskFour = ({ showModal, setShowModal }) => {
                             </button> */}
             </div>
             <div className="flex w-full flex-col">
-              <h1 className="text-[20px] font-semibold">Follow us on VK</h1>
+              <h1 className="text-[20px] font-semibold">Follow our founder</h1>
               <p className="text-[#9a96a6] text-[16px] font-medium pt-1 pb-10">
-                Follow us on VK to get regular updates about this airdrop
-                bot and its great potentials
+                Follow our founder Mr. Ankit Jain
               </p>
 
               <p className="w-full text-center text-[14px] font-semibold text-[#49ee49] pb-4">
@@ -250,7 +249,7 @@ const TaskFour = ({ showModal, setShowModal }) => {
                 <div className="flex flex-1 items-center space-x-2">
                   <div className="flex flex-col space-y-1">
                     <span className="font-semibold">
-                      Follow on VK
+                      Follow on X
                     </span>
 
                     {message && (
