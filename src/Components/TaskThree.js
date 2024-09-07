@@ -349,8 +349,8 @@ const TaskThree = ({ showModal, setShowModal }) => {
 
                 <div className="w-full flex justify-center pb-12">
                   <button
+                    className={`flex font-medium bg-btn hover:bg-[#1e3356] ease-in duration-300 py-[6px] px-4 rounded-[8px] text-[#262626] items-center justify-center text-[16px]`}
                     onClick={finishMission}
-                    className="bg-gradient-to-b gradient from-[#3d47ff] to-[#575fff] w-full py-5 px-3 flex items-center justify-center text-center rounded-[12px] font-semibold text-[22px]"
                   >
                     Claim
                   </button>
