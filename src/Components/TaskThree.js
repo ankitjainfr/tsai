@@ -26,7 +26,6 @@ const TaskThree = ({ showModal, setShowModal }) => {
   const taskID = "task_3102"; // Assign a unique ID to this task
   const [openComplete, setOpenComplete] = useState(false);
   const [isMissionButtonDisabled, setIsMissionButtonDisabled] = useState(true);
-  const [claimAnimation, setClaimAnimation] = useState(false);
 
 
   useEffect(() => {
@@ -152,28 +151,16 @@ const TaskThree = ({ showModal, setShowModal }) => {
     }
   };
 
-  const updateUserCountInFirestore = async (id, newBalance ) => {
+  const updateUserCountInFirestore = async (userId, newBalance, newTapBalance) => {
     try {
-      const userRef = collection(db, "telegramUsers");
-      const querySnapshot = await getDocs(userRef);
-      let userDocId = null;
-      querySnapshot.forEach((doc) => {
-        if (doc.data().userId === id) {
-          userDocId = doc.id;
+      const userDocRef = doc(db, "telegramUsers", userId);
+          await updateDoc(userDocRef, { balance: newBalance, tapBalance: newTapBalance });
+          console.log("User count updated in Firestore.");
+        } catch (e) {
+          console.error("Error updating user count in Firestore: ", e);
         }
-      });
+      };
 
-      if (userDocId) {
-        const userDocRef = doc(db, "telegramUsers", userDocId);
-        await updateDoc(userDocRef, { balance: newBalance, tapBalance: newBalance });
-        // console.log('User count updated in Firestore.');
-      } else {
-        console.error("User document not found.");
-      }
-    } catch (e) {
-      console.error("Error updating user count in Firestore: ", e);
-    }
-  };
 
   const finishMission = async () => {
     setShowModal(false);
@@ -367,15 +354,6 @@ const TaskThree = ({ showModal, setShowModal }) => {
                   >
                     Claim
                   </button>
-                  
-        )
-        {claimAnimation && (
-          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-            <div className="bg-green-500 text-white px-8 py-4 rounded-lg text-2xl font-bold animate-bounce">
-              Reward Claimed!
-            </div>
-          </div>
-        )}
                 </div>
               </div>
             </div>
