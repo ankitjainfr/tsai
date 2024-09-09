@@ -1,61 +1,62 @@
-const express = require("express");
-const { Bot, InlineKeyboard } = require("grammy");
-const bodyParser = require("body-parser");
 require("dotenv").config();
-const TOKEN = '7435621483:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI';
-const URL = 'https://turboswap2.vercel.app';
-
-const token = process.env.BOT_TOKEN;
-
-console.log(token);
-if (!token) throw new Error("BOT_TOKEN is unset");
-
-const bot = new Bot(token);
-
+const express = require("express");
+const cors = require("cors");
 const app = express();
+const http = require("http").createServer(app);
+const bodyParser = require("body-parser");
+
+app.use(cors());
+app.use(express.json());
+const API_PORT = process.env.PORT || 3003;
+
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+// app.use(logger("dev"));
 
-// Handle the /start command
+http.listen(API_PORT, () => {
+  console.log(`LISTENING ON PORT ${API_PORT}`);
+});
+
+const { Bot, InlineKeyboard } = require("grammy");
+const botToken = process.env.BOT_TOKEN;
+const bot = new Bot(botToken);
+
 bot.command("start", async (ctx) => {
-  console.log("/start command received");
+  const userid = ctx.from.username; // Get the Telegram user ID
+  console.log("userid:", userid);
+  const receiveid = ctx.match;
+  console.log("receiveid:", receiveid);
 
+  const menus = new InlineKeyboard().webApp(
+    "Click to get started!",
+    "https://turboswap2.vercel.app/"
+  );
 
-  // Reply with personalized message and horizontal inline keyboard
   await ctx.replyWithPhoto(
-    "Welcome to TurboSwap AI!",
+    "https://ipfs.io/ipfs/QmTvM9LXzgCuFTrWzJCHVFiMwUpu3rctYB6pt8nMadZoos?format=jpg&name=large",
     {
-      caption: ``,
-      reply_markup: {
-        inline_keyboard: [
-          [
-            {
-              text: "Play",
-              url: "https://turboswap2.vercel.app", // Link to your Next.js app
-            },
-            {
-              text: "X",
-              url: "https://x.com/TurboSwapAI", // Link to x
-            },
-            {
-              text: "TG",
-              url: "https://t.me/TurboSwapAI_ton", // Replace with your community link
-            },
-          ],
-        ],
-      },
+      reply_markup: menus,
+      parse_mode: "HTML",
+      caption: `Hello, @${userid}! Welcome to TurboWap AI.`,
     }
   );
 });
 
-// Start the bot.
-bot.start();
-
-app.post(`/bot${token}`, (req, res) => {
-  bot.handleUpdate(req.body, res);
-});
-
-app.get("/", (req, res) => {
-  res.send("Welcome to the bot server!");
+bot.on("callback_query:data", async (ctx) => {
+  const data = ctx.callbackQuery.data;
+  switch (data) {
+    case "howToEarn":
+      const menus = new InlineKeyboard().webApp(
+        "Click to get started!",
+        "https://turboswap2.vercel.app/"
+      );
+      await ctx.reply("Hello, this is just example.", {
+        reply_markup: menus,
+        parse_mode: "HTML",
+      });
+    default:
+      break;
+  }
 });
 
 app.listen(5000, async () => {
