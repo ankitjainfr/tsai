@@ -156,10 +156,10 @@ const TaskThree = ({ showModal, setShowModal }) => {
       const userDocRef = doc(db, "telegramUsers", userId);
           await updateDoc(userDocRef, { balance: newBalance, tapBalance: newTapBalance });
           console.log("User count updated in Firestore.");
-        } catch (e) {
-          console.error("Error updating user count in Firestore: ", e);
-        }
-      };
+    } catch (e) {
+      console.error("Error updating user count in Firestore: ", e);
+    }
+  };
 
 
   const finishMission = async () => {
@@ -348,8 +348,8 @@ const TaskThree = ({ showModal, setShowModal }) => {
                 </div>
 
                 <div className="w-full flex justify-center pb-12">
-                  <button
-                    className={`flex font-medium bg-btn hover:bg-[#1e3356] ease-in duration-300 py-[6px] px-4 rounded-[8px] text-[#262626] items-center justify-center text-[16px]`}
+                  <button 
+                    className={'flex font-medium bg-btn hover:bg-[#1e3356] ease-in duration-300 py-[6px] px-4 rounded-[8px] text-[#262626] items-center justify-center text-[16px]'}
                     onClick={finishMission}
                   >
                     Claim
