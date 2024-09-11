@@ -194,8 +194,8 @@ const MilestoneRewards = () => {
                 <ProgressFill style={{ width: `${Math.min(progress, 100)}%` }} />
               </ProgressBar>
               <ProgressLabels>
-                <span>{formatNumber(tapBalance)} Taps</span>
-                <span>{formatNumber(milestone.tapBalanceRequired)} Taps</span>
+                <span>{formatNumber(tapBalance)} Coins</span>
+                <span>{formatNumber(milestone.tapBalanceRequired)} Coins</span>
               </ProgressLabels>
             </ProgressBarContainer>
             <ClaimButton 

@@ -376,14 +376,11 @@ const Plutos = () => {
         <Animate>
           <div className="w-full flex justify-center flex-col overflow-hidden">
           <div className="flex flex-row justify-center items-center mb-1">
-          <div className="bg-blue-500 text-[#fff] text-[12px] font-extrabold text-center p-2 mr-2 rounded-[10px]">
+          <div className="bg-blue-500 text-[#fff] text-[15px] font-extrabold text-center p-2 mr-2 rounded-[10px]">
   Welcome<br />{smallname}
 </div>
-<div className="bg-blue-500 text-[#fff] text-[12px] font-extrabold text-center p-2 mr-2 rounded-[10px]">
-  Earn per tap:<br /> +{tapValue.value}
-</div>
-<div className="bg-blue-500 text-[#fff] text-[12px] font-extrabold text-center p-2 rounded-[10px]">
-  Booster per tap:<br /> +{tapValue.value * 5}
+<div className="bg-green-500 text-[#000000] text-[15px] font-extrabold text-center p-2 mr-2 rounded-[10px]">
+  Collect $TURBOS AI coins by completing tasks<br />
 </div>
 </div>
             <div className="flex space-x-[18px] justify-center items-center mt-0">
@@ -407,7 +404,7 @@ const Plutos = () => {
               >
                 {level.name}
               </h2>
-              <MdOutlineKeyboardArrowRight className="w-[20px] h-[20px] text-[#171717] mt-[2px]" />
+              {/* <MdOutlineKeyboardArrowRight className="w-[20px] h-[20px] text-[#171717] mt-[2px]" /> */}
             </div>
             
             <div className="w-full flex justify-center items-center relative mt-2">
@@ -422,7 +419,7 @@ const Plutos = () => {
                   alt="err"
                   className={`absolute w-[300px] rotate-45 mb-[100px] ${tapGuru ? "block" : "hidden"}`}
                 />
-                <div className="image-container flex-grow flex justify-center items-center">
+                {/* <div className="image-container flex-grow flex justify-center items-center">
                   {mainTap && (
                     <Container>
                       <img
@@ -455,7 +452,14 @@ const Plutos = () => {
                       ))}
                     </Container>
                   )}
-                </div>
+                </div> */}
+                <img
+                        
+                        ref={imageRef}
+                        src={level.imgBoost}
+                        alt="Wobble"
+                        className="wobble-image !w-[360px] select-none"
+                      />
               </div>
             </div>
   
@@ -463,26 +467,26 @@ const Plutos = () => {
               <div className="flex flex-col w-full items-center justify-center">
                 <div className="flex pb-[6px] space-x-1 items-center justify-center text-[#fff]">
                   <img alt="flash" src={flash} className="w-[20px]" />
-                  <div>
+                  {/* <div>
                     <span className="text-[18px] font-bold">{energy}</span>
                     <span className="text-[14px] font-medium">/ {battery.energy}</span>
-                  </div>
+                  </div> */}
                 </div>
-                <div className="flex w-full p-[4px] h-[20px] items-center bg-energybar rounded-[12px] border-[1px] border-borders2">
+                {/* <div className="flex w-full p-[4px] h-[20px] items-center bg-energybar rounded-[12px] border-[1px] border-borders2">
                   <div
                     className="bg-[#9d0000] h-full rounded-full transition-width duration-100"
                     style={{ width: `${energyPercentage}%` }}
                   ></div>
-                </div>
+                </div> */}
               </div>
             </div>
-            <EnergyBar 
+            {/* <EnergyBar 
               energy={energy}
               battery={battery}
               energyPercentage={energyPercentage}
               flash={flash}
               leaderboard={leaderboard}
-            />
+            /> */}
             <Levels showLevels={showLevels} setShowLevels={setShowLevels} />
           </div>
         </Animate>
