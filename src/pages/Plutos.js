@@ -404,7 +404,7 @@ const Plutos = () => {
               >
                 {level.name}
               </h2> */}
-              <div className="text-[#171717] text-[22px] font-medium">
+              <div className="text-[#171717] text-[26px] font-medium">
               $TURBOS AI<br />
              </div>
               {/* <MdOutlineKeyboardArrowRight className="w-[20px] h-[20px] text-[#171717] mt-[2px]" /> */}

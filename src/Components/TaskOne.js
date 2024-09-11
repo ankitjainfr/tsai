@@ -68,7 +68,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
 
 
   const handleTaskLinkClick = () => {
-    window.open("https://t.me/TurboSwapAI_ton");
+    window.open("https://t.me/TurbosAI_ton");
 
     setTimeout(() => {
       setShowTaskButton(false);

@@ -34,11 +34,11 @@ bot.command("start", async (ctx) => {
             },
             {
               text: "X",
-              url: "https://x.com/TurboSwapAI", // Link to x
+              url: "https://x.com/TurbosAIonTon", // Link to x
             },
             {
               text: "TG",
-              url: "https://t.me/TurboSwapAI_ton", // Replace with your community link
+              url: "https://t.me/TurbosAI_ton", // Replace with your community link
             },
           ],
         ],
