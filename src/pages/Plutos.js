@@ -398,12 +398,15 @@ const Plutos = () => {
                 className="w-[35px] relative"
                 alt="bronze"
               />
-              <h2
+              {/* <h2
                 onClick={() => setShowLevels(true)}
                 className="text-[#171717] text-[22px] font-medium"
               >
                 {level.name}
-              </h2>
+              </h2> */}
+              <div className="text-[#171717] text-[22px] font-medium">
+              $TURBOS AI<br />
+             </div>
               {/* <MdOutlineKeyboardArrowRight className="w-[20px] h-[20px] text-[#171717] mt-[2px]" /> */}
             </div>
             
