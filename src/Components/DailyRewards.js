@@ -15,7 +15,7 @@ const DailyRewards = ({ showModal, setShowModal }) => {
   const [claimAnimation, setClaimAnimation] = useState(false);
 
   const rewards = [
-    2500, 7000, 18000, 52000, 80000, 100000, 250000, 320000, 500000, 1000000
+    1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000
   ];
 
 

@@ -185,8 +185,8 @@ const TaskOne = ({ showModal, setShowModal }) => {
     }, 2000);
 
     if (isVerified) {
-      const newCount = balance + 50000;
-      const newCount2 = tapBalance + 50000;
+      const newCount = balance + 2500;
+      const newCount2 = tapBalance + 2500;
       setBalance(newCount);
       setTapBalance(newCount2);
       setMessage("");
@@ -237,7 +237,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
                   <div className="flex flex-col space-y-1">
                     <span className="font-semibold text-[#262626]">Reward</span>
                     <div className="flex items-center">
-                      <span className="font-medium text-[#262626]">50 000</span>
+                      <span className="font-medium text-[#262626]">2500</span>
                     </div>
                   </div>
                 </div>
@@ -354,7 +354,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
                         alt="Coin Icon"
                       />
                     </div>
-                    <div className="font-bold text-[20px]">50 000</div>
+                    <div className="font-bold text-[20px]">2500</div>
                   </div>
                 </div>
 
