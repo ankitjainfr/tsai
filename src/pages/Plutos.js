@@ -379,12 +379,13 @@ const Plutos = () => {
           <div className="bg-blue-500 text-[#fff] text-[15px] font-extrabold text-center p-2 mr-2 rounded-[10px]">
   Welcome<br />{smallname}
 </div>
-       <div className="bg-green-500 text-[#000000] text-[25px] font-extrabold text-center p-2 mr-2 rounded-[10px]">
-        Collect Bonus </div><div className="bg-green-500 text-[#ffffff] text-[25px] font-extrabold text-center p-2 mr-2 rounded-[10px]"> 
+       <div className="bg-green-500 text-[#000000] text-[15px] font-extrabold text-center p-2 mr-2 rounded-[10px]">
+        Collect Bonus 
+<div className="bg-green-500 text-[#ffffff] text-[15px] font-extrabold text-center p-2 mr-2 rounded-[10px]"> 
         10,000 $TURBOS AI </div> 
-       <div className="bg-green-500 text-[#000000] text-[25px] font-extrabold text-center p-2 mr-2 rounded-[10px]">
+       <div className="bg-green-500 text-[#000000] text-[15px] font-extrabold text-center p-2 mr-2 rounded-[10px]">
         coins on 1st Daily claim on Tasks page<br />
-</div>
+</div></div>
 </div>
             <div className="flex space-x-[18px] justify-center items-center mt-0">
               <div className="w-[50px] h-[50px]">
@@ -407,7 +408,7 @@ const Plutos = () => {
               >
                 {level.name}
               </h2> */}
-              <div className="text-[#171717] text-[26px] font-medium text-center">
+              <div className="text-[#171717] text-[20px] font-medium text-center">
               $TURBOS AI
               <br></br>
              hmm...Don't click me, only collect coins from Tasks page.
