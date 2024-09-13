@@ -7,7 +7,7 @@ const DeviceCheck = ({ children }) => {
         
        <div className='w-full pt-24 text-center flex flex-col space-y-3 justify-center items-center'>
         <p className='text-[28px] font-semibold text-[#171717] font-[Poppins]'>
-        TurboSwap AI Mini App is only available for mobile users 📱, Please use a mobile device to play. 💙
+        Turbos AI Mini App is only available for mobile users 📱, Please use a mobile device to play. 💙
         </p>
         <img src='/main-logo.png'
         alt="TurboSwap AI logo"

@@ -188,7 +188,7 @@ const Tasks = () => {
                 <TaskName>Daily Rewards</TaskName>
                 <TaskReward>
                   <img src={coinsmall} alt="coin" style={{ width: '1rem', marginRight: '0.25rem' }} />
-                  1 000 Claim daily
+                  Claim daily
                 </TaskReward>
               </TaskInfo>
               <MdOutlineKeyboardArrowRight size={20} color="#171717" />
