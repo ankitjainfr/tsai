@@ -145,7 +145,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
         { userId: id, taskId: taskId, completed: isCompleted },
         { merge: true }
       );
-      // console.log('Task completion status saved to Firestore.');
+      console.log('Task completion status saved to Firestore.');
     } catch (e) {
       console.error("Error saving task completion status: ", e);
     }
@@ -165,7 +165,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
       if (userDocId) {
         const userDocRef = doc(db, "telegramUsers", userDocId);
         await updateDoc(userDocRef, { balance: newBalance, tapBalance: newBalance });
-        // console.log('User count updated in Firestore.');
+        console.log('User count updated in Firestore.');
       } else {
         console.error("User document not found.");
       }
