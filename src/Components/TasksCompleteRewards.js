@@ -15,7 +15,7 @@ const TasksCompletionRewards = ({ showModal, setShowModal }) => {
   const [claimAnimation, setClaimAnimation] = useState(false);
 
   const rewards = [
-    10000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000
+    10000
   ];
 
 
@@ -56,7 +56,7 @@ const TasksCompletionRewards = ({ showModal, setShowModal }) => {
     if (lastClaimDate) {
       const today = new Date().setHours(0, 0, 0, 0);
       const lastClaim = new Date(lastClaimDate).setHours(0, 0, 0, 0);
-      const diffDays = Math.floor((today - lastClaim) / (1000 * 60 * 60 * 24));
+      const diffDays = Math.floor((today - lastClaim) / (10000 * 60 * 60 * 24));
 
       if (diffDays === 1) {
         setCanClaim(true);
@@ -78,7 +78,7 @@ const TasksCompletionRewards = ({ showModal, setShowModal }) => {
     setError(null);
 
     try {
-      const newStreak = currentStreak + 1;
+      const newStreak = currentStreak;
       const reward = rewards[Math.min(newStreak - 1, rewards.length - 1)];
       const newBalance = balance + reward;
       const newTapBalance = tapBalance + reward;
@@ -142,7 +142,7 @@ const TasksCompletionRewards = ({ showModal, setShowModal }) => {
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-start overflow-y-auto taskbg">
       <div className="w-full max-w-md px-4 py-8">
-        <h2 className="text-3xl font-bold mb-8 text-center text-white">Daily Rewards</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center text-white">Tasks Completion Rewards</h2>
         {loading ? (
           <div className="flex justify-center items-center h-64">
             <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500"></div>
@@ -163,7 +163,7 @@ const TasksCompletionRewards = ({ showModal, setShowModal }) => {
                 >
                   <img src={coinsmall} alt="coin" className="w-8 h-8 mb-2" />
                   <span className="text-xs font-semibold text-white">{reward.toLocaleString()}</span>
-                  <span className="text-xs text-white">Day {index + 1}</span>
+                  <span className="text-xs text-white">Day 1</span>
                   {index < currentStreak && (
                     <img 
                       src={congratsIcon} 
