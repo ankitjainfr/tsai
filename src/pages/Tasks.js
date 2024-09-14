@@ -17,7 +17,6 @@ import TaskSix from '../Components/TaskSix';
 import DailyRewards from '../Components/DailyRewards';
 import MilestoneRewards from '../Components/MilestoneRewards';
 import ReferralRewards from '../Components/Rewards';
-import TasksCompletionRewards from '../Components/TasksCompleteRewards';
 
 const PageContainer = styled.div`
   display: flex;
@@ -227,17 +226,6 @@ const Tasks = () => {
               </TaskInfo>
               {taskCompleted6 ? <IoCheckmarkSharp size={20} color="#5bd173" /> : <MdOutlineKeyboardArrowRight size={20} color="#171717" />}
             </TaskItem>
-            <TaskItem onClick={() => setShowDailyRewards(true)}>
-              <TaskIcon src={coinsmall} alt="Tasks Completion Rewards" />
-              <TaskInfo>
-                <TaskName>Tasks Completion Reward</TaskName>
-                <TaskReward>
-                  <img src={coinsmall} alt="coin" style={{ width: '1rem', marginRight: '0.25rem' }} />
-                  Claim
-                </TaskReward>
-              </TaskInfo>
-              <MdOutlineKeyboardArrowRight size={20} color="#171717" />
-            </TaskItem>
           </TaskContainer>
         );
       case 'leagues':
@@ -284,7 +272,6 @@ const Tasks = () => {
       <TaskThree showModal={showModal3} setShowModal={setShowModal3} />
       <TaskSix showModal={showModal6} setShowModal={setShowModal6} />
       <DailyRewards showModal={showDailyRewards} setShowModal={setShowDailyRewards} />
-      <TasksCompletionRewards showModal={showDailyRewards} setShowModal={setShowDailyRewards} />
     </PageContainer>
   );
 };
