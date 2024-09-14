@@ -26,15 +26,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
   const taskID = "task_3100"; // Assign a unique ID to this task
   const [openComplete, setOpenComplete] = useState(false);
   const [isMissionButtonDisabled, setIsMissionButtonDisabled] = useState(true);
-  const [claimAnimation, setClaimAnimation] = useState(false);
-  const [canClaim, setCanClaim] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [Claim] = setLoading(true);
 
-
-  const reward = [
-    2500
-  ];
 
   useEffect(() => {
     const handleBackButtonClick = () => {
@@ -159,22 +151,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
     }
   };
 
-  const updateUserCountInFirestore = async (id ) => {
-    const newBalance = balance + reward;
-    const reward = balance + 2500;
-    const newTapBalance = tapBalance + reward;
-    
-    try {
-      const userRef = doc(db, 'telegramUsers', id);
-      await updateDoc(userRef, { 
-        balance: newBalance,
-        tapBalance: newTapBalance
-      });
-    } catch (e) {
-      console.error("Error updating user count in Firestore: ", e);
-    }
-    
-    
+  const updateUserCountInFirestore = async (id, newBalance ) => {
     try {
       const userRef = collection(db, "telegramUsers");
       const querySnapshot = await getDocs(userRef);
@@ -207,16 +184,16 @@ const TaskOne = ({ showModal, setShowModal }) => {
       document.getElementById("congrat").style.visibility = "invisible";
     }, 2000);
 
-    
-
     if (isVerified) {
-      const newBalance = balance + 2500;
-      const newTapBalance = tapBalance + 2500;
-      setBalance(newBalance);
-      setTapBalance(newTapBalance);
+      const newCount = balance + 2500;
+      const newCount2 = tapBalance + 2500;
+      setBalance(newCount);
+      setTapBalance(newCount2);
+      setMessage("");
+      setIsMissionButtonDisabled(true); // Optionally disable the button again after mission completion
       await saveTaskCompletionToFirestore(id, taskID, true);
-      await updateUserCountInFirestore(id, newBalance, newTapBalance);
-      setIsMissionButtonDisabled(true); // Optionally disable the button again after mission completion0
+      // Update the user's count in Firestore
+      await updateUserCountInFirestore(id, newCount, newCount2);
 
       setTaskCompleted(true);
     } else {
@@ -228,6 +205,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
     setOpenComplete(true);
     document.getElementById("footermain").style.zIndex = "";
   };
+
 
   return (
     <>
@@ -387,21 +365,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
                   >
                     Claim
                   </button>
-                  <button>
-                  onClick={Claim}
-                  className={`w-full py-4 px-6 rounded-lg text-white text-xl font-semibold ${
-                canClaim && !loading ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-500 cursor-not-allowed'
-                } transition duration-300 ease-in-out transform hover:scale-105`}
-                  </button>
-                  {claimAnimation && (
-          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-            <div className="bg-green-500 text-white px-8 py-4 rounded-lg text-2xl font-bold animate-bounce">
-              Reward Claimed!
-            </div>
-          </div>
-        )}
                 </div>
-                
               </div>
             </div>
           </div>
