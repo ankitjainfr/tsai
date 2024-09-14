@@ -364,7 +364,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
                     className="bg-gradient-to-b gradient from-[#3d47ff] to-[#575fff] w-full py-5 px-3 flex items-center justify-center text-center rounded-[12px] font-semibold text-[22px]"
                   >
                     Claim
-                  </button>
+                  </button> 
                 </div>
               </div>
             </div>
