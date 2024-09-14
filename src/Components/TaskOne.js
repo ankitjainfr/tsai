@@ -185,15 +185,13 @@ const TaskOne = ({ showModal, setShowModal }) => {
     }, 2000);
 
     if (isVerified) {
-      const newCount = balance + 2500;
-      const newCount2 = tapBalance + 2500;
-      setBalance(newCount);
-      setTapBalance(newCount2);
-      setMessage("");
-      setIsMissionButtonDisabled(true); // Optionally disable the button again after mission completion
+      const newBalance = balance + 2500;
+      const newTapBalance = tapBalance + 2500;
+      setBalance(newBalance);
+      setTapBalance(newTapBalance);
       await saveTaskCompletionToFirestore(id, taskID, true);
-      // Update the user's count in Firestore
-      await updateUserCountInFirestore(id, newCount, newCount2);
+      await updateUserCountInFirestore(id, newBalance, newTapBalance);
+      setIsMissionButtonDisabled(true); // Optionally disable the button again after mission completion0
 
       setTaskCompleted(true);
     } else {
