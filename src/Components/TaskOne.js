@@ -157,6 +157,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
 
   const updateUserCountInFirestore = async (id ) => {
     const newBalance = balance + reward;
+    const reward = balance + 2500;
     const newTapBalance = tapBalance + reward;
     try {
       const userRef = doc(db, 'telegramUsers', id);
