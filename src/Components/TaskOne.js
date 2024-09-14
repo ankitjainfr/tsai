@@ -27,6 +27,10 @@ const TaskOne = ({ showModal, setShowModal }) => {
   const [openComplete, setOpenComplete] = useState(false);
   const [isMissionButtonDisabled, setIsMissionButtonDisabled] = useState(true);
 
+  const reward = [
+    2500
+  ];
+
 
   useEffect(() => {
     const handleBackButtonClick = () => {
@@ -151,7 +155,18 @@ const TaskOne = ({ showModal, setShowModal }) => {
     }
   };
 
-  const updateUserCountInFirestore = async (id, newBalance ) => {
+  const updateUserCountInFirestore = async (id ) => {
+    const newBalance = balance + reward;
+    const newTapBalance = tapBalance + reward;
+    try {
+      const userRef = doc(db, 'telegramUsers', id);
+      await updateDoc(userRef, { 
+        balance: newBalance,
+        tapBalance: newTapBalance
+      });
+    } catch (e) {
+      console.error("Error updating user count in Firestore: ", e);
+    }
     try {
       const userRef = collection(db, "telegramUsers");
       const querySnapshot = await getDocs(userRef);
