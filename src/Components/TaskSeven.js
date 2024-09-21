@@ -68,7 +68,7 @@ const TaskSeven = ({ showModal, setShowModal }) => {
 
 
   const handleTaskLinkClick = () => {
-    window.open("https://www.facebook.com/profile.php?id=61562777822910");
+    window.open("https://www.facebook.com/profile.php?id=61565223698131");
 
     setTimeout(() => {
       setShowTaskButton(false);
@@ -85,7 +85,7 @@ const TaskSeven = ({ showModal, setShowModal }) => {
     }
 
     const response = await fetch(
-     `https://api.telegram.org/bot7219246213:AAHJV1pqqvWo6AXL_sTPWOTm1j1RvIn2jrA/getChatMember?chat_id=@liboochannel_ton&user_id=${id}`
+     `https://api.telegram.org/bot7435621483:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI/getChatMember?chat_id=@TurboSwapAI_ton&user_id=${id}`
     );
     const data = await response.json();
 
@@ -185,8 +185,8 @@ const TaskSeven = ({ showModal, setShowModal }) => {
     }, 2000);
 
     if (isVerified) {
-      const newCount = balance + 50000;
-      const newCount2 = tapBalance + 50000;
+      const newCount = balance + 1000;
+      const newCount2 = tapBalance + 1000;
       setBalance(newCount);
       setTapBalance(newCount2);
       setMessage("");
@@ -238,7 +238,7 @@ const TaskSeven = ({ showModal, setShowModal }) => {
                   <div className="flex flex-col space-y-1">
                     <span className="font-semibold">Reward</span>
                     <div className="flex items-center">
-                      <span className="font-medium">50 000</span>
+                      <span className="font-medium">1000</span>
                     </div>
                   </div>
                 </div>
@@ -355,7 +355,7 @@ const TaskSeven = ({ showModal, setShowModal }) => {
                         alt="Coin Icon"
                       />
                     </div>
-                    <div className="font-bold text-[20px]">50 000</div>
+                    <div className="font-bold text-[20px]">1000</div>
                   </div>
                 </div>
 

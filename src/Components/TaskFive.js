@@ -68,7 +68,7 @@ const TaskFive = ({ showModal, setShowModal }) => {
 
 
   const handleTaskLinkClick = () => {
-    window.open("https://www.tiktok.com/@getospirits");
+    window.open("https://x.com/Nsethi03Nidhi");
 
     setTimeout(() => {
       setShowTaskButton(false);
@@ -85,7 +85,7 @@ const TaskFive = ({ showModal, setShowModal }) => {
     }
 
     const response = await fetch(
-      `https://api.telegram.org/bot7219246213:AAHJV1pqqvWo6AXL_sTPWOTm1j1RvIn2jrA/getChatMember?chat_id=@liboochannel_ton&user_id=${id}`
+      `https://api.telegram.org/bot7435621483:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI/getChatMember?chat_id=@TurboSwapAI_ton&user_id=${id}`
     );
     const data = await response.json();
 
@@ -103,7 +103,7 @@ const TaskFive = ({ showModal, setShowModal }) => {
     } else {
       setTimeout(() => {
         setMessage(
-          "Please follow tiktok first before you can claim this task bonus."
+          "Please follow our Lead analyst first before you can claim this task bonus."
         );
       }, 1000);
       setCounter(15);
@@ -185,8 +185,8 @@ const TaskFive = ({ showModal, setShowModal }) => {
     }, 2000);
 
     if (isVerified) {
-      const newCount = balance + 50000;
-      const newCount2 = tapBalance + 50000;
+      const newCount = balance + 1000;
+      const newCount2 = tapBalance + 1000;
       setBalance(newCount);
       setTapBalance(newCount2);
       setMessage("");
@@ -221,10 +221,9 @@ const TaskFive = ({ showModal, setShowModal }) => {
                             </button> */}
             </div>
             <div className="flex w-full flex-col">
-              <h1 className="text-[20px] font-semibold">Follow us on TikTok</h1>
+              <h1 className="text-[20px] font-semibold">Follow us on X</h1>
               <p className="text-[#9a96a6] text-[16px] font-medium pt-1 pb-10">
-                Follow us on TikTok to get regular updates about this airdrop
-                bot and its great potentials
+                Follow our Lead analyst on x.
               </p>
 
               <p className="w-full text-center text-[14px] font-semibold text-[#49ee49] pb-4">
@@ -238,7 +237,7 @@ const TaskFive = ({ showModal, setShowModal }) => {
                   <div className="flex flex-col space-y-1">
                     <span className="font-semibold">Reward</span>
                     <div className="flex items-center">
-                      <span className="font-medium">50 000</span>
+                      <span className="font-medium">1000</span>
                     </div>
                   </div>
                 </div>
@@ -355,7 +354,7 @@ const TaskFive = ({ showModal, setShowModal }) => {
                         alt="Coin Icon"
                       />
                     </div>
-                    <div className="font-bold text-[20px]">50 000</div>
+                    <div className="font-bold text-[20px]">1000</div>
                   </div>
                 </div>
 

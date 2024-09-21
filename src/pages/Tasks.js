@@ -199,7 +199,7 @@ const Tasks = () => {
                 <TaskName>Join Our Telegram Channel</TaskName>
                 <TaskReward>
                   <img src={coinsmall} alt="coin" style={{ width: '1rem', marginRight: '0.25rem' }} />
-                  {formatNumber(50000)}
+                  {formatNumber(2500)}
                 </TaskReward>
               </TaskInfo>
               {taskCompleted ? <IoCheckmarkSharp size={20} color="#5bd173" /> : <MdOutlineKeyboardArrowRight size={20} color="#171717" />}
@@ -210,7 +210,7 @@ const Tasks = () => {
                 <TaskName>Follow us on X</TaskName>
                 <TaskReward>
                   <img src={coinsmall} alt="coin" style={{ width: '1rem', marginRight: '0.25rem' }} />
-                  {formatNumber(50000)}
+                  {formatNumber(2500)}
                 </TaskReward>
               </TaskInfo>
               {taskCompleted3 ? <IoCheckmarkSharp size={20} color="#5bd173" /> : <MdOutlineKeyboardArrowRight size={20} color="#171717" />}
@@ -221,7 +221,7 @@ const Tasks = () => {
                 <TaskName>Follow us on Instagram</TaskName>
                 <TaskReward>
                   <img src={coinsmall} alt="coin" style={{ width: '1rem', marginRight: '0.25rem' }} />
-                  {formatNumber(80000)}
+                  {formatNumber(2500)}
                 </TaskReward>
               </TaskInfo>
               {taskCompleted6 ? <IoCheckmarkSharp size={20} color="#5bd173" /> : <MdOutlineKeyboardArrowRight size={20} color="#171717" />}

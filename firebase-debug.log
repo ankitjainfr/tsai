@@ -1,0 +1,21 @@
+[debug] [2024-09-06T11:51:13.503Z] ----------------------------------------------------------------------
+[debug] [2024-09-06T11:51:13.514Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ankit\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js use --add
+[debug] [2024-09-06T11:51:13.516Z] CLI Version:   13.15.1
+[debug] [2024-09-06T11:51:13.516Z] Platform:      win32
+[debug] [2024-09-06T11:51:13.517Z] Node Version:  v20.14.0
+[debug] [2024-09-06T11:51:13.517Z] Time:          Fri Sep 06 2024 17:21:13 GMT+0530 (India Standard Time)
+[debug] [2024-09-06T11:51:13.517Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-06T11:51:13.526Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-09-06T11:51:13.841Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-06T11:51:13.841Z] > authorizing via signed-in user (ankit.jainfr@gmail.com)
+[debug] [2024-09-06T11:51:13.844Z] > refreshing access token with scopes: []
+[debug] [2024-09-06T11:51:13.845Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-09-06T11:51:13.846Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-06T11:51:14.095Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-09-06T11:51:14.096Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-06T11:51:14.106Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2024-09-06T11:51:14.459Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-09-06T11:51:14.459Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2024-09-06T11:51:14.770Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-09-06T11:51:14.770Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]

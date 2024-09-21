@@ -68,7 +68,7 @@ const TaskTwo = ({ showModal, setShowModal }) => {
 
 
   const handleTaskLinkClick = () => {
-    window.open("https://t.me/TurboSwapAI_ton");
+    window.open("https://t.me/TurbosAI_ton");
 
     setTimeout(() => {
       setShowTaskButton(false);
@@ -185,8 +185,8 @@ const TaskTwo = ({ showModal, setShowModal }) => {
     }, 2000);
 
     if (isVerified) {
-      const newCount = balance + 80000;
-      const newCount2 = tapBalance + 80000;
+      const newCount = balance + 2500;
+      const newCount2 = tapBalance + 2500;
       setBalance(newCount);
       setTapBalance(newCount2);
       setMessage("");
@@ -237,7 +237,7 @@ const TaskTwo = ({ showModal, setShowModal }) => {
                   <div className="flex flex-col space-y-1">
                     <span className="font-semibold">Reward</span>
                     <div className="flex items-center">
-                      <span className="font-medium">80 000</span>
+                      <span className="font-medium">2500</span>
                     </div>
                   </div>
                 </div>
@@ -354,7 +354,7 @@ const TaskTwo = ({ showModal, setShowModal }) => {
                         alt="Coin Icon"
                       />
                     </div>
-                    <div className="font-bold text-[20px]">80 000</div>
+                    <div className="font-bold text-[20px]">2500</div>
                   </div>
                 </div>
 

@@ -68,7 +68,7 @@ const TaskThree = ({ showModal, setShowModal }) => {
 
 
   const handleTaskLinkClick = () => {
-    window.open("https://x.com/libooproject", "_blank");
+    window.open("https://x.com/TurbosAIonTon", "_blank");
 
     setTimeout(() => {
       setShowTaskButton(false);
@@ -85,7 +85,7 @@ const TaskThree = ({ showModal, setShowModal }) => {
     }
 
     const response = await fetch(
-     `https://api.telegram.org/bot7219246213:AAHJV1pqqvWo6AXL_sTPWOTm1j1RvIn2jrA/getChatMember?chat_id=@liboochannel_ton&user_id=${id}`
+     `https://api.telegram.org/bot7435621483:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI/getChatMember?chat_id=@TurboSwapAI_ton&user_id=${id}`
     );
     const data = await response.json();
 
@@ -151,28 +151,16 @@ const TaskThree = ({ showModal, setShowModal }) => {
     }
   };
 
-  const updateUserCountInFirestore = async (id, newBalance ) => {
+  const updateUserCountInFirestore = async (userId, newBalance, newTapBalance) => {
     try {
-      const userRef = collection(db, "telegramUsers");
-      const querySnapshot = await getDocs(userRef);
-      let userDocId = null;
-      querySnapshot.forEach((doc) => {
-        if (doc.data().userId === id) {
-          userDocId = doc.id;
-        }
-      });
-
-      if (userDocId) {
-        const userDocRef = doc(db, "telegramUsers", userDocId);
-        await updateDoc(userDocRef, { balance: newBalance, tapBalance: newBalance });
-        // console.log('User count updated in Firestore.');
-      } else {
-        console.error("User document not found.");
-      }
+      const userDocRef = doc(db, "telegramUsers", userId);
+          await updateDoc(userDocRef, { balance: newBalance, tapBalance: newTapBalance });
+          console.log("User count updated in Firestore.");
     } catch (e) {
       console.error("Error updating user count in Firestore: ", e);
     }
   };
+
 
   const finishMission = async () => {
     setShowModal(false);
@@ -185,16 +173,14 @@ const TaskThree = ({ showModal, setShowModal }) => {
     }, 2000);
 
     if (isVerified) {
-      const newCount = balance + 50000;
-      const newCount2 = tapBalance + 50000;
-      setBalance(newCount);
-      setTapBalance(newCount2);
-      setMessage("");
-      setIsMissionButtonDisabled(true); // Optionally disable the button again after mission completion
+      const newBalance = balance + 2500;
+      const newTapBalance = tapBalance + 2500;
+      setBalance(newBalance);
+      setTapBalance(newTapBalance);
       await saveTaskCompletionToFirestore(id, taskID, true);
-      // Update the user's count in Firestore
-      await updateUserCountInFirestore(id, newCount, newCount2);
-
+      await updateUserCountInFirestore(id, newBalance, newTapBalance);
+      setIsMissionButtonDisabled(true); // Optionally disable the button again after mission completion0
+      
       setTaskCompleted(true);
     } else {
       setMessage("Please verify the task first.");
@@ -238,7 +224,7 @@ const TaskThree = ({ showModal, setShowModal }) => {
                   <div className="flex flex-col space-y-1">
                     <span className="font-semibold text-[#262626]">Reward</span>
                     <div className="flex items-center">
-                      <span className="font-medium text-[#262626]">50 000</span>
+                      <span className="font-medium text-[#262626]">2500</span>
                     </div>
                   </div>
                 </div>
@@ -355,14 +341,14 @@ const TaskThree = ({ showModal, setShowModal }) => {
                         alt="Coin Icon"
                       />
                     </div>
-                    <div className="font-bold text-[20px]">50 000</div>
+                    <div className="font-bold text-[20px]">2500</div>
                   </div>
                 </div>
 
                 <div className="w-full flex justify-center pb-12">
-                  <button
+                  <button 
+                    className={'flex font-medium bg-btn hover:bg-[#1e3356] ease-in duration-300 py-[6px] px-4 rounded-[8px] text-[#262626] items-center justify-center text-[16px]'}
                     onClick={finishMission}
-                    className="bg-gradient-to-b gradient from-[#3d47ff] to-[#575fff] w-full py-5 px-3 flex items-center justify-center text-center rounded-[12px] font-semibold text-[22px]"
                   >
                     Claim
                   </button>

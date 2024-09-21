@@ -68,7 +68,7 @@ const TaskSix = ({ showModal, setShowModal }) => {
 
 
   const handleTaskLinkClick = () => {
-    window.open("https://www.instagram.com/libooproject");
+    window.open("https://www.instagram.com/turbosai_ton/");
 
     setTimeout(() => {
       setShowTaskButton(false);
@@ -85,7 +85,7 @@ const TaskSix = ({ showModal, setShowModal }) => {
     }
 
     const response = await fetch(
-      `https://api.telegram.org/bot7219246213:AAHJV1pqqvWo6AXL_sTPWOTm1j1RvIn2jrA/getChatMember?chat_id=@liboochannel_ton&user_id=${id}`
+      `https://api.telegram.org/bot7435621483:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI/getChatMember?chat_id=@TurboSwapAI_ton&user_id=${id}`
     );
     const data = await response.json();
 
@@ -185,15 +185,13 @@ const TaskSix = ({ showModal, setShowModal }) => {
     }, 2000);
 
     if (isVerified) {
-      const newCount = balance + 80000;
-      const newCount2 = tapBalance + 80000;
-      setBalance(newCount);
-      setTapBalance(newCount2);
-      setMessage("");
-      setIsMissionButtonDisabled(true); // Optionally disable the button again after mission completion
+      const newBalance = balance + 2500;
+      const newTapBalance = tapBalance + 2500;
+      setBalance(newBalance);
+      setTapBalance(newTapBalance);
       await saveTaskCompletionToFirestore(id, taskID, true);
-      // Update the user's count in Firestore
-      await updateUserCountInFirestore(id, newCount, newCount2);
+      await updateUserCountInFirestore(id, newBalance, newTapBalance);
+      setIsMissionButtonDisabled(true); // Optionally disable the button again after mission completion0
 
       setTaskCompleted(true);
     } else {
@@ -238,7 +236,7 @@ const TaskSix = ({ showModal, setShowModal }) => {
                   <div className="flex flex-col space-y-1">
                     <span className="font-semibold text-[#262626]">Reward</span>
                     <div className="flex items-center">
-                      <span className="font-medium text-[#262626]">80 000</span>
+                      <span className="font-medium text-[#262626]">2500</span>
                     </div>
                   </div>
                 </div>
@@ -355,7 +353,7 @@ const TaskSix = ({ showModal, setShowModal }) => {
                         alt="Coin Icon"
                       />
                     </div>
-                    <div className="font-bold text-[20px]">50 000</div>
+                    <div className="font-bold text-[20px]">2500</div>
                   </div>
                 </div>
 

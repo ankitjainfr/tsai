@@ -68,7 +68,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
 
 
   const handleTaskLinkClick = () => {
-    window.open("https://t.me/TurboSwapAI_ton");
+    window.open("https://t.me/TurbosAI_ton");
 
     setTimeout(() => {
       setShowTaskButton(false);
@@ -85,7 +85,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
     }
 
     const response = await fetch(
-      `https://api.telegram.org/bot7435621483:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI/getChatMember?chat_id=@TurboSwapAI_ton&user_id=${id}`
+      `https://api.telegram.org/bot7219246213:AAHJV1pqqvWo6AXL_sTPWOTm1j1RvIn2jrA/getChatMember?chat_id=@liboochannel_ton&user_id=${id}`
     );
     const data = await response.json();
 
@@ -145,7 +145,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
         { userId: id, taskId: taskId, completed: isCompleted },
         { merge: true }
       );
-      // console.log('Task completion status saved to Firestore.');
+      console.log('Task completion status saved to Firestore.');
     } catch (e) {
       console.error("Error saving task completion status: ", e);
     }
@@ -165,7 +165,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
       if (userDocId) {
         const userDocRef = doc(db, "telegramUsers", userDocId);
         await updateDoc(userDocRef, { balance: newBalance, tapBalance: newBalance });
-        // console.log('User count updated in Firestore.');
+        console.log('User count updated in Firestore.');
       } else {
         console.error("User document not found.");
       }
@@ -185,8 +185,8 @@ const TaskOne = ({ showModal, setShowModal }) => {
     }, 2000);
 
     if (isVerified) {
-      const newCount = balance + 50000;
-      const newCount2 = tapBalance + 50000;
+      const newCount = balance + 2500;
+      const newCount2 = tapBalance + 2500;
       setBalance(newCount);
       setTapBalance(newCount2);
       setMessage("");
@@ -237,7 +237,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
                   <div className="flex flex-col space-y-1">
                     <span className="font-semibold text-[#262626]">Reward</span>
                     <div className="flex items-center">
-                      <span className="font-medium text-[#262626]">50 000</span>
+                      <span className="font-medium text-[#262626]">2500</span>
                     </div>
                   </div>
                 </div>
@@ -354,7 +354,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
                         alt="Coin Icon"
                       />
                     </div>
-                    <div className="font-bold text-[20px]">50 000</div>
+                    <div className="font-bold text-[20px]">2500</div>
                   </div>
                 </div>
 
@@ -364,7 +364,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
                     className="bg-gradient-to-b gradient from-[#3d47ff] to-[#575fff] w-full py-5 px-3 flex items-center justify-center text-center rounded-[12px] font-semibold text-[22px]"
                   >
                     Claim
-                  </button>
+                  </button> 
                 </div>
               </div>
             </div>

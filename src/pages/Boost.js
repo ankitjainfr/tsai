@@ -181,13 +181,13 @@ const chargingValues = [
 ]
 
 
-const upgradeCosts = [0, 50, 5000, 10000, 20000, 400000, 800000, 1000000, 1500000, 2000000, 2500000, 3000000, 4000000, 5000000];
+const upgradeCosts = [0, 2000, 5000, 10000, 20000, 400000, 800000, 1000000, 1500000, 2000000, 2500000, 3000000, 4000000, 5000000];
 
 
-const energyUpgradeCosts = [0, 50, 6000, 12000, 24000, 500000, 1000000, 2000000, 3000000, 4000000, 6000000, 8000000, 10000000, 20000000];
+const energyUpgradeCosts = [0, 3000, 6000, 12000, 24000, 500000, 1000000, 2000000, 3000000, 4000000, 6000000, 8000000, 10000000, 20000000];
 
 
-const chargingUpgradeCosts = [0, 50, 30000, 100000, 200000, 400000, 700000];
+const chargingUpgradeCosts = [0, 6000, 30000, 100000, 200000, 400000, 700000];
 
 
 const Boost = () => {
@@ -648,7 +648,7 @@ const Boost = () => {
         Multitap
       </h3>
       <p className="pb-6 text-[#262626] text-[16px] text-center">
-        Increase amount of TURBO SWAP you can earn per one tap <br/>
+        Increase amount of TURBO SWAP AI you can earn per one tap <br/>
         +1 per tap for each level
       </p>
       <div className="flex flex-1 items-center space-x-2">
@@ -913,3 +913,4 @@ const Boost = () => {
 };
 
 export default Boost;
+

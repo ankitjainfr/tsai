@@ -9,9 +9,9 @@ import congratspic from "../images/celebrate.gif";
 import coinsmall from "../images/main-logo.png";
 
 const friendsRewards = [
-  { title: 'Invite 3 friends', referralsRequired: 2, bonusAward: 50000, imgRef: '/ref1.webp' },
-  { title: 'Invite 5 friends', referralsRequired: 5, bonusAward: 150000, imgRef: '/ref2.webp' },
-  { title: 'Invite 10 friends', referralsRequired: 10, bonusAward: 250000, imgRef: '/ref3.webp' },
+  { title: 'Invite 3 friends', referralsRequired: 2, bonusAward: 1000, imgRef: '/ref1.webp' },
+  { title: 'Invite 5 friends', referralsRequired: 5, bonusAward: 3000, imgRef: '/ref2.webp' },
+  { title: 'Invite 10 friends', referralsRequired: 10, bonusAward: 5000, imgRef: '/ref3.webp' },
 ];
 
 const RewardsContainer = styled.div`
