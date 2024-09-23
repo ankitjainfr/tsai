@@ -1,67 +1,44 @@
+const { Telegraf, Markup } = require("telegraf");
 const express = require("express");
-const { Bot, InlineKeyboard } = require("grammy");
-const bodyParser = require("body-parser");
-require("dotenv").config();
-const TOKEN = '7435621483:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI';
-const URL = 'https://turboswap2.vercel.app/';
+const app = express()
 
-const token = process.env.BOT_TOKEN;
+const TOKEN = "7435621483:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI";  // Asegúrate de reemplazar "YOUR_BOT_TOKEN" con tu token real
+const bot = new Telegraf(TOKEN);
 
-console.log(token);
-if (!token) throw new Error("BOT_TOKEN is unset");
+app.use(express.json())
 
-const bot = new Bot(token);
-
-const app = express();
-app.use(bodyParser.json());
-
-// Handle the /start command
-bot.command("start", async (ctx) => {
-  console.log("/start command received");
+const web_link = "https://turboswap2.vercel.app";
+const community_link = "https://t.me/TurboSwapAI_ton";
 
 
-  // Reply with personalized message and horizontal inline keyboard
-  await ctx.replyWithPhoto(
-    "Welcome to TurboSwap AI!",
-    {
-      caption: ``,
-      reply_markup: {
-        inline_keyboard: [
-          [
-            {
-              text: "Play",
-              url: "https://turboswap2.vercel.app", // Link to your Next.js app
+bot.start((ctx) => {
+    const startPayload = ctx.answerInlineQuery.startPayload;
+    const urlSent = `${web_link}?ref=${startPayload}`;
+    const user = ctx.message.from;
+    const userName = user.username ? `@${user.username}` : user.first_name;
+
+    ctx.replyWithPhoto(
+        { url: 'https://x.com/TurboSwapAI' }, // Reemplaza 'URL_DE_LA_IMAGEN' con la URL de tu imagen
+        {
+            caption: `*Hey! Welcome to TurboSwap AI, tap, help and get $TURBO SWAP AI Tokens.*
+Got friends?, Bring them all into the game.
+⚡️ Token listing:
+Confirmed listings on Tier-1 CEXs.
+Backed by [redacted] (reveal coming soon) 🤫`,
+            parse_mode: 'Markdown',
+            reply_markup: {
+                inline_keyboard: [
+                  [{ text: "👋 Yeah, Start Playing!", web_app: { url: urlSent } }],
+                  [{ text: "Join our Community", url: community_link }]
+                ]
+                
             },
-            {
-              text: "X",
-              url: "https://x.com/TurbosAIonTon", // Link to x
-            },
-            {
-              text: "TG",
-              url: "https://t.me/TurbosAI_ton", // Replace with your community link
-            },
-          ],
-        ],
-      },
-    }
-  );
+        }
+    );
 });
 
-// Start the bot.
-bot.start();
+bot.launch();
 
-app.post(`/bot${token}`, (req, res) => {
-  bot.handleUpdate(req.body, res);
-});
-
-app.get("/", (req, res) => {
-  res.send("Welcome to the bot server!");
-});
-
-app.listen(5000, async () => {
-  console.log("Server is running on port 3000");
-
-  //   await bot.api.deleteWebhook();
-  await bot.api.setWebhook(`https://api.telegram.org/bot${TOKEN}/setWebhook?url=${URL}`);
-  console.log("Webhook set");
-});
+app.listen(3005, () => {
+    console.log("server is me and now running")
+})
