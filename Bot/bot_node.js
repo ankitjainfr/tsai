@@ -3,7 +3,7 @@ const TOKEN = "7435621483:AAGRUIjDzAJdKTwAThDbgwQyNJ96WSTm3KI";
 const bot = new Telegraf(TOKEN);
 
 const web_link = "https://turboswap2.vercel.app";
-const community_link = "https://t.me/TurboSwapAI_ton"; 
+const community_link = "https://t.me/TurbosAI_ton"; 
 const how_to_earn = `How to play TurboSwap AI 🤑
 
 💰 Tap to earn
@@ -24,11 +24,11 @@ Dates will be announced in our announcement channel. Stay tuned!`;
 
 
 bot.start((ctx) => {
-  const startPayload = ctx.answerInlineQuery.startPayload;
+  const startPayload = ctx.startPayload;
   const urlSent = `${web_link}?ref=${startPayload}`;
   const user = ctx.message.from;
   const userName = user.username ? `@${user.username}` : user.first_name;
-  ctx.answerInlineQuery.replyWithMarkdown(`*Hey, ${userName}! Welcome to TurboSwap AI!*
+  ctx.replyWithMarkdown(`*Hey, ${userName}! Welcome to TurboSwap AI!*
 Tap on the Turbo button (green frog) and see your balance rise.
 
 *TurboSwap AI* is a Special Telegram App on the TON Blockchain. The biggest part of TurboSwap AI Token distribution will occur among the players here.

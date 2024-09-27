@@ -8,17 +8,17 @@ const bot = new Telegraf(TOKEN);
 app.use(express.json())
 
 const web_link = "https://turboswap2.vercel.app";
-const community_link = "https://t.me/TurboSwapAI_ton";
+const community_link = "https://t.me/TurbosAI_ton";
 
 
 bot.start((ctx) => {
-    const startPayload = ctx.answerInlineQuery.startPayload;
+    const startPayload = ctx.startPayload;
     const urlSent = `${web_link}?ref=${startPayload}`;
     const user = ctx.message.from;
     const userName = user.username ? `@${user.username}` : user.first_name;
 
     ctx.replyWithPhoto(
-        { url: 'https://x.com/TurboSwapAI' }, // Reemplaza 'URL_DE_LA_IMAGEN' con la URL de tu imagen
+        { url: 'https://x.com/TurbosAIonTon' }, // Reemplaza 'URL_DE_LA_IMAGEN' con la URL de tu imagen
         {
             caption: `*Hey! Welcome to TurboSwap AI, tap, help and get $TURBO SWAP AI Tokens.*
 Got friends?, Bring them all into the game.
