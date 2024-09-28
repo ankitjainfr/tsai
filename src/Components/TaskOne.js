@@ -26,6 +26,7 @@ const TaskOne = ({ showModal, setShowModal }) => {
   const taskID = "task_3100"; // Assign a unique ID to this task
   const [openComplete, setOpenComplete] = useState(false);
   const [isMissionButtonDisabled, setIsMissionButtonDisabled] = useState(true);
+  const [claimAnimation, setClaimAnimation] = useState(false);
 
 
   useEffect(() => {
@@ -189,6 +190,10 @@ const TaskOne = ({ showModal, setShowModal }) => {
       const newCount2 = tapBalance + 2500;
       setBalance(newCount);
       setTapBalance(newCount2);
+      setClaimAnimation(true);
+      setTimeout(() => {
+        setClaimAnimation(false);
+      }, 2000);
       setMessage("");
       setIsMissionButtonDisabled(true); // Optionally disable the button again after mission completion
       await saveTaskCompletionToFirestore(id, taskID, true);
