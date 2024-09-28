@@ -13,7 +13,7 @@ import {
 import { useUser } from "../context/userContext";
 // import { EnergyContext } from "../context/EnergyContext";
 
-const TaskOne = ({ showModal, setShowModal }) => {
+const BuyTokens = ({ showModal, setShowModal }) => {
   const {id, balance, setBalance, tapBalance, setTapBalance, taskCompleted, setTaskCompleted} = useUser();
 
   const [isVerified, setIsVerified] = useState(false);
@@ -371,13 +371,6 @@ const TaskOne = ({ showModal, setShowModal }) => {
           </div>
         </div>
       ) : null}
-      {claimAnimation && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-          <div className="bg-green-500 text-white px-8 py-4 rounded-lg text-2xl font-bold animate-bounce">
-            Reward Claimed!
-          </div>
-        </div>
-      )}
     </>
   );
 };
