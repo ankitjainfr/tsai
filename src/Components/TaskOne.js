@@ -369,20 +369,13 @@ const TaskOne = ({ showModal, setShowModal }) => {
                     className="bg-gradient-to-b gradient from-[#3d47ff] to-[#575fff] w-full py-5 px-3 flex items-center justify-center text-center rounded-[12px] font-semibold text-[22px]"
                   >
                     Claim
-                  </button> 
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       ) : null}
-      {claimAnimation && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-          <div className="bg-green-500 text-white px-8 py-4 rounded-lg text-2xl font-bold animate-bounce">
-            Reward Claimed!
-          </div>
-        </div>
-      )}
     </>
   );
 };
