@@ -68,7 +68,7 @@ const TaskThree = ({ showModal, setShowModal }) => {
 
 
   const handleTaskLinkClick = () => {
-    window.open("https://x.com/TurbosAIonBase", "_blank");
+    window.open("https://x.com/TurbosAICoin", "_blank");
 
     setTimeout(() => {
       setShowTaskButton(false);
